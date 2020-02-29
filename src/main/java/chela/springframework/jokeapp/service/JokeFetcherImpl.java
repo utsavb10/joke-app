@@ -9,8 +9,14 @@ public class JokeFetcherImpl implements JokeFetcher{
 
 	private final ChuckNorrisQuotes chuckNorrisQuotes;
 
-	public JokeFetcherImpl() {
-		this.chuckNorrisQuotes = new ChuckNorrisQuotes();
+//	Add chuckNorris here
+//	public JokeFetcherImpl() {
+//		this.chuckNorrisQuotes = new ChuckNorrisQuotes();
+//	}
+
+	// Load chuckNorris class in a configuration class separately
+	public JokeFetcherImpl(ChuckNorrisQuotes chuckNorrisQuotes) {
+		this.chuckNorrisQuotes = chuckNorrisQuotes;
 	}
 
 	@Override
