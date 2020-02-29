@@ -11,14 +11,16 @@ public class JokesController {
 
 	private final JokeFetcher jokeFetcher;
 
+	@Autowired
 	public JokesController(JokeFetcher jokeFetcher) {
 		this.jokeFetcher = jokeFetcher;
 	}
 
-	@RequestMapping("/")
+	@RequestMapping({"/", ""})
 	String getJoke(Model model){
-		String joke = jokeFetcher.getChuckNorrisQuote();
 
-		return "Joke";
+		model.addAttribute("joke", jokeFetcher.getChuckNorrisQuote());
+
+		return "chucknorris";
 	}
 }
